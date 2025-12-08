@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icing on the Neck - Luxury Jewelry Store</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+        }
+        
+        #container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        #info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            z-index: 100;
+        }
+        
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            z-index: 100;
+        }
+        
+        .control-btn {
+            background: #4a90e2;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .control-btn:hover {
+            background: #357abd;
+        }
+        
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+            z-index: 200;
+            text-align: center;
+        }
+        
+        .loading-content h2 {
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        
+        .loading-bar {
+            width: 300px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+        
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            width: 0%;
+            animation: loading 2s ease-in-out infinite;
+            border-radius: 2px;
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="loading">
+            <div class="loading-content">
+                <h2>Loading Icing on the Neck...</h2>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <p>Preparing your luxury jewelry experience...</p>
+            </div>
+        </div>
+        <div id="info">
+            <h3>Icing on the Neck</h3>
+            <p>Luxury Jewelry Collection</p>
+            <p>Use mouse to rotate view</p>
+            <p>Scroll to zoom in/out</p>
+            <p>Click on items for details</p>
+            <p><strong>Premium Features:</strong></p>
+            <p>• Professional Track Lighting</p>
+            <p>• Crystal Chandelier</p>
+            <p>• Display Case Spotlights</p>
+            <p>• Wall Wash Lighting</p>
+            <p>• LED Strip Accents</p>
+            <p>• Dynamic Shimmer Effects</p>
+            <p>• Warm Ambient Glow</p>
+            <p>• High-Definition Shadows</p>
+            <p><strong>Luxury Decor:</strong></p>
+            <p>• Premium Wall Artworks</p>
+            <p>• Gold Ornate Frames</p>
+            <p>• Decorative Wall Panels</p>
+            <p>• Luxury Wall Sconces</p>
+            <p>• Ornate Mirror</p>
+            <p>• Architectural Moldings</p>
+        </div>
+        <div id="controls">
+            <button class="control-btn" onclick="resetCamera()">Reset View</button>
+            <button class="control-btn" onclick="toggleLighting()">Toggle Lighting</button>
+            <button class="control-btn" onclick="toggleRotation()">Auto Rotate</button>
+            <div style="margin-top: 10px;">
+                <strong>Ambient Modes:</strong><br>
+                <button class="control-btn" onclick="setAmbientMode('normal')">Normal</button>
+                <button class="control-btn" onclick="setAmbientMode('warm')">Warm</button>
+                <button class="control-btn" onclick="setAmbientMode('cool')">Cool</button>
+                <button class="control-btn" onclick="setAmbientMode('romantic')">Romantic</button>
+                <button class="control-btn" onclick="setAmbientMode('lounge')">Lounge</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="jewelry-store.js"></script>
+</body>
+</html>
